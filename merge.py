@@ -35,16 +35,18 @@ Once Finished
 """
 
 
-def merge(*iterables, key=None, reverse=False) -> list:
+def merge(*iterables, key=None, reverse=False):
     """Alternative for heapq.merge
-    Takes
+    Takes as an input iterables and returns them joined as sorted generator.
 
     Args:
-        key (_type_, optional): _description_. Defaults to None.
-        reverse (bool, optional): _description_. Defaults to False.
+        key (funcion, optional): parameter to specify a function (or other callable)
+                                 to be called on each list element prior to making comparisons.
+                                 Defaults to None.
+        reverse (bool, optional): Reverse or not. Defaults to False.
 
     Returns:
-        _type_: _description_
+        generator: Sorted iterables
     """
     rtn_list = []
     for item in iterables:
@@ -54,7 +56,3 @@ def merge(*iterables, key=None, reverse=False) -> list:
     data = sorted(rtn_list, key=key, reverse=reverse)
     data_gen = (y for y in data)
     return data_gen
-
-
-if __name__ == "__main__":
-    print(type(merge([1], [2], [3])))
