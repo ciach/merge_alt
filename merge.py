@@ -1,5 +1,5 @@
 """
-Write generator merge(…) which accepts as arguments an arbitrary number of iterables, 
+Write generator merge(…) which accepts as arguments an arbitrary number of iterables,
 each of which generates sorted numbers, not necessarily one after another.
 merge() must merge the outputs of the iterables,
 i.e. give a sorted queue of all the numbers from the input iterables.
