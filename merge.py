@@ -49,9 +49,9 @@ def merge(*iterables, key=None, reverse=False):
         generator: Sorted iterables
     """
     rtn_list = []
-    for item in iterables:
-        for i in item:
-            rtn_list.append(i)
+    for iterable in iterables:
+        for item in iterable:
+            rtn_list.append(item)
     # creates a generator object
     data = sorted(rtn_list, key=key, reverse=reverse)
     data_gen = (y for y in data)
